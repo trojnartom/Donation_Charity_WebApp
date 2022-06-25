@@ -19,15 +19,15 @@
         </ul>
 
         <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="#" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
+            <li><a href="/donate" class="btn btn--without-border active">Start</a></li>
+            <li><a href="#howitworks" class="btn btn--without-border">O co chodzi?</a></li>
+            <li><a href="#aboutus" class="btn btn--without-border">O nas</a></li>
+            <li><a href="#institution" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
 
-    <div class="slogan container container--90">
+    <div id="start" class="slogan container container--90">
         <div class="slogan--item">
             <h1>
                 Zacznij pomagać!<br/>
