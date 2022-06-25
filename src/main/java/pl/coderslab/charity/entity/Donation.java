@@ -2,6 +2,7 @@ package pl.coderslab.charity.entity;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -29,19 +30,20 @@ public class Donation {
 
     private String city;
 
+    @Column(columnDefinition = "CHAR(6)")
     private String zipCode;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
 
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalTime pickUpTime;
 
     private String pickUpComment;
 
-    @OneToMany
-    @JoinColumn(name = "categories_id")
+    @ManyToMany
     private List<Category> categories;
 
     @ManyToOne
-    @JoinColumn(name = "institution_id")
     private Institution institution;
 }
