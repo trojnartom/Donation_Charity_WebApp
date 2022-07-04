@@ -3,8 +3,11 @@ package pl.coderslab.charity.entity;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
@@ -24,6 +27,9 @@ public class Donation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NumberFormat
+    @Min(1)
+    @Max(50)
     private Integer quantity;
 
     private String street;
@@ -40,6 +46,8 @@ public class Donation {
     private LocalTime pickUpTime;
 
     private String pickUpComment;
+
+    private String phone;
 
     @ManyToMany
     private List<Category> categories;
