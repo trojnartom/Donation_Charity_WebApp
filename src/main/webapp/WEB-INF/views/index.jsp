@@ -86,20 +86,21 @@
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items">
-            <li>
-                <c:forEach items="${institutions}" var="institution" varStatus="id" begin="1" step="2">
-                    <div class="col">
-                        <div class="title">${institution.name}</div>
-                        <div class="subtitle">Cel i misja: ${institution.description}</div>
-                    </div>
-                </c:forEach>
-                <c:forEach items="${institutions}" var="institution" varStatus="id" begin="2" step="2">
-                    <div class="col">
-                        <div class="title">${institution.name}</div>
-                        <div class="subtitle">Cel i misja: ${institution.description}</div>
-                    </div>
-                </c:forEach>
-            </li>
+            <c:forEach items="${institutions}" step ="2" varStatus="counter">
+                <li>
+                    <c:forEach items="${institutions}" begin="${counter.index}" end="${counter.index+1}" var="institution">
+                        <div class="col">
+                            <div class="title">${institution.name}</div>
+                            <div class="subtitle">Cel i misja: ${institution.description}</div>
+                        </div>
+                    </c:forEach>
+                    <c:if test="${counter.last}">
+                        <div class="col" style="visibility: hidden">
+
+                        </div>
+                    </c:if>
+                </li>
+            </c:forEach>
         </ul>
     </div>
 
