@@ -18,8 +18,8 @@ INSERT IGNORE INTO donations (id, city, pick_up_comment, pick_up_date, pick_up_t
 INSERT IGNORE INTO donations (id, city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (4,'Rzeszów', 'koment 4', 20221001, 151500, 3, 'Paderewskiego', '35-086', 4);
 INSERT IGNORE INTO donations (id, city, pick_up_comment, pick_up_date, pick_up_time, quantity, street, zip_code, institution_id) VALUES (5,'Rzeszów', 'koment 5', 20220912, 095000, 20, 'Paderewskiego', '35-086', 5);
 
-INSERT IGNORE INTO donations_categories VALUES (1,5);
-INSERT IGNORE INTO donations_categories VALUES (2,4);
-INSERT IGNORE INTO donations_categories VALUES (3,3);
-INSERT IGNORE INTO donations_categories VALUES (4,2);
-INSERT IGNORE INTO donations_categories VALUES (5,1);
+# INSERT IGNORE INTO donations_categories VALUES (1,5);
+# INSERT IGNORE INTO donations_categories VALUES (2,4);
+# INSERT IGNORE INTO donations_categories VALUES (3,3);
+# INSERT IGNORE INTO donations_categories VALUES (4,2);
+# INSERT IGNORE INTO donations_categories VALUES (5,1);
