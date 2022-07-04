@@ -164,6 +164,60 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.parentElement.hidden = this.currentStep >= 5;
 
       // TODO: get data from inputs and show them in summary
+
+      // SUMMARY: Categories
+      let listOfCategory = document.querySelectorAll(".categoryForm");
+      let listOfCheckedCategory = [];
+      listOfCategory.forEach(category => {
+        if(category.checked) {
+          listOfCheckedCategory.push(category);
+        }
+      });
+      let displayCategory = "";
+      listOfCheckedCategory.forEach(category => {
+        displayCategory += category.title + " ";
+      })
+
+      // SUMMARY: Quantity
+      let quantityAndCategory = document.querySelector(".quantity-things");
+      let quantityFromForm = document.getElementById("quantity").value;
+      if(quantityFromForm >= 2) {
+        quantityAndCategory.innerText = quantityFromForm + " worki " + displayCategory;
+      }else{
+        quantityAndCategory.innerText = quantityFromForm + " worek " + displayCategory;
+      }
+
+      // SUMMARY: Institution (TO DO) There is a problem with reading names with quotes ""
+      let institution = document.querySelector(".institutionDonation");
+      let checkedInstitution = document.querySelector('input[name="institution"]:checked');
+      if (checkedInstitution !== null) {
+        institution.innerText = "Dla " + checkedInstitution.title;
+      }
+      console.log(checkedInstitution);
+
+
+      // SUMMARY: Address data
+      let streetAdress = document.querySelector(".street-address");
+      streetAdress.innerText = document.getElementById("street").value;
+
+      let cityAdress = document.querySelector(".city-address");
+      cityAdress.innerText = document.getElementById("city").value;
+
+      let zipCOde = document.querySelector(".city-zipCode");
+      zipCOde.innerText = document.getElementById("zipCode").value;
+
+      let phoneNumber = document.querySelector(".phoneNumber");
+      phoneNumber.innerText = document.getElementById("phoneNumber").value;
+
+      let donationDate = document.querySelector(".orderDate");
+      donationDate.innerText = document.getElementById("date").value;
+
+      let donationTime = document.querySelector(".orderTime");
+      donationTime.innerText = document.getElementById("time").value;
+
+      let donationDescription = document.querySelector(".orderDescription");
+      donationDescription.innerText = document.getElementById("pickUpComment").value;
+
     }
 
   }
