@@ -24,4 +24,7 @@ public class Institution {
 
     private String description;
 
+    public String getEscapedName () {
+        return name.replace("\"", "\\\"");
+    }
 }
