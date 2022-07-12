@@ -189,9 +189,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // SUMMARY: Institution (TO DO) There is a problem with reading names with quotes ""
       let institution = document.querySelector(".institutionDonation");
-      let checkedInstitution = document.querySelector('input[name="institution"]:checked');
+      let checkedInstitution = document.querySelector('input[name="institution"]:checked ~ .description > .title');
       if (checkedInstitution !== null) {
-        institution.innerText = "Dla " + checkedInstitution.title;
+        institution.innerText = "Dla " + checkedInstitution.innerText;
       }
       console.log(checkedInstitution);
 
